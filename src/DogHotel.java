@@ -102,8 +102,10 @@ public class DogHotel {
                         "  }        /~~\n" +
                         " /_)^ --,r'\n" +
                         "|b      |b\n");
+                scanner.close();
                 break;
             }
         }
     }
 }
+
