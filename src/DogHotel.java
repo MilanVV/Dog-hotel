@@ -12,7 +12,8 @@ public class DogHotel {
             System.out.println("(1) Een hond toevoegen");
             System.out.println("(2) Een hond verwijderen");
             System.out.println("(3) Overzicht");
-            System.out.println("(4) Stoppen");
+            System.out.println("(4) Een hond opzoeken");
+            System.out.println("(5) Stoppen");
             int reply = scanner.nextInt();
 
             if(reply==1) { // Hond toevoegen
@@ -80,7 +81,7 @@ public class DogHotel {
                     System.out.println(nameDelete+" is succesvol verwijderd van het hotel.");
                     System.out.println("");
                 }
-                else{
+                else{ // Ongeldige naam
                     System.out.println("Geen hond met de naam \""+nameDelete+"\" gevonden.");
                 }
             }
@@ -94,7 +95,29 @@ public class DogHotel {
                     System.out.println("Er zijn momenteel geen honden in het hotel.");
                 }
             }
-            else if(reply==4){
+            else if(reply==4){ // Opzoeken
+                System.out.println("Naam van de hond: ");
+                String nameSearch = scanner.next();
+                boolean found = false;
+
+                if(dog1 != null && dog1.name.equalsIgnoreCase(nameSearch)){
+                    found = true;
+                    dog1.showInfo();
+                }
+                else if(dog2 != null && dog2.name.equalsIgnoreCase(nameSearch)) {
+                    found = true;
+                    dog2.showInfo();
+                }
+                else if(dog3 != null && dog3.name.equalsIgnoreCase(nameSearch)) {
+                    found = true;
+                    dog3.showInfo();
+                }
+                if(found==false){
+                    System.out.println("Geen hond met de naam \""+nameSearch+"\" gevonden.");
+                    System.out.print("");
+                }
+            }
+            else if(reply==5){ // Stop
                 System.out.println("Programma wordt afgesloten.");
                 System.out.println("");
                 System.out.println("          __\n" +
