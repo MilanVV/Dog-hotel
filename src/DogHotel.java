@@ -8,14 +8,14 @@ public class DogHotel {
         Dog dog3 = null;
 
         while(true){
-            System.out.println("Wat wil je doen?");
+            System.out.println("Wat wil je doen?"); // Keuze 1
             System.out.println("(1) Een hond toevoegen");
             System.out.println("(2) Een hond verwijderen");
             System.out.println("(3) Overzicht");
             System.out.println("(4) Stoppen");
             int reply = scanner.nextInt();
 
-            if(reply==1) {
+            if(reply==1) { // Hond toevoegen
                 System.out.println("Naam: ");
                 String name = scanner.next();
 
@@ -41,19 +41,68 @@ public class DogHotel {
 
                 if (dog1 == null) {
                     dog1 = new Dog(name, breed, color, age, gender, sterilised, vaccinated, broughtIn);
-                    System.out.print("Hond succesvol toegevoegd!");
-                    System.out.print("");
-                } else if (dog2 == null) {
-                    dog2 = new Dog(name, breed, color, age, gender, sterilised, vaccinated, broughtIn);
-                    System.out.print("Hond succesvol toegevoegd!");
-                    System.out.print("");
-                } else if (dog3 == null) {
-                    dog3 = new Dog(name, breed, color, age, gender, sterilised, vaccinated, broughtIn);
-                    System.out.print("Hond succesvol toegevoegd!");
-                    System.out.print("");
+                    System.out.println("Hond succesvol toegevoegd!");
+                    System.out.println("");
                 }
-                System.out.println("Hotel is vol! Hond niet toegevoegd.");
+                else if (dog2 == null) {
+                    dog2 = new Dog(name, breed, color, age, gender, sterilised, vaccinated, broughtIn);
+                    System.out.println("Hond succesvol toegevoegd!");
+                    System.out.println("");
+                }
+                else if (dog3 == null) {
+                    dog3 = new Dog(name, breed, color, age, gender, sterilised, vaccinated, broughtIn);
+                    System.out.println("Hond succesvol toegevoegd!");
+                    System.out.println("");
+                }
+                else { // hotel vol
+                    System.out.println("Hotel is vol! Hond niet toegevoegd.");
+                    System.out.println("");
+                }
+            }
+            else if(reply==2){ // Hond verwijderen
+                System.out.println("Naam van de hond die je wil verwijderen: ");
+                String nameDelete = scanner.next();
+                boolean found = false;
+
+                if(dog1 != null && dog1.name.equalsIgnoreCase(nameDelete)){
+                    dog1 = null;
+                    found = true;
+                }
+                else if(dog2 != null && dog2.name.equalsIgnoreCase(nameDelete)){
+                    dog2 = null;
+                    found = true;
+                }
+                else if(dog3 != null && dog3.name.equalsIgnoreCase(nameDelete)){
+                    dog3 = null;
+                    found = true;
+                }
+                if(found){
+                    System.out.println(nameDelete+" is succesvol verwijderd van het hotel.");
+                    System.out.println("");
+                }
+                else{
+                    System.out.println("Geen hond met de naam \""+nameDelete+"\" gevonden.");
+                }
+            }
+            else if(reply==3){ // Overzicht
+                System.out.println("Overzicht van honden in het hotel:");
+                System.out.println("_____________________________________________");
+                if (dog1 != null) dog1.showInfo();
+                if (dog2 != null) dog2.showInfo();
+                if (dog3 != null) dog3.showInfo();
+                if (dog1 == null && dog2 == null && dog3 == null) {
+                    System.out.println("Er zijn momenteel geen honden in het hotel.");
+                }
+            }
+            else if(reply==4){
+                System.out.println("Programma wordt afgesloten.");
                 System.out.println("");
+                System.out.println("          __\n" +
+                        " \\ ______/ V`-,\n" +
+                        "  }        /~~\n" +
+                        " /_)^ --,r'\n" +
+                        "|b      |b\n");
+                break;
             }
         }
     }

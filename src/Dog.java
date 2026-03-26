@@ -30,5 +30,6 @@ public class Dog {
         System.out.println("Sterilised: " + sterilised);
         System.out.println("Vaccinated: " + vaccinated);
         System.out.println("Brought in: " + broughtIn);
+        System.out.println("_____________________________________________");
     }
 }    
