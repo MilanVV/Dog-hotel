@@ -22,14 +22,14 @@ public class Dog {
 
 
     public void showInfo() {
-        System.out.println("Name: " + name);
-        System.out.println("Breed: " + breed);
-        System.out.println("Color: " + color);
-        System.out.println("Age: " + age);
-        System.out.println("Gender: " + gender);
-        System.out.println("Sterilised: " + sterilised);
-        System.out.println("Vaccinated: " + vaccinated);
-        System.out.println("Brought in: " + broughtIn);
+        System.out.println("Naam: " + name);
+        System.out.println("Ras: " + breed);
+        System.out.println("Kleur: " + color);
+        System.out.println("Leeftijd: " + age);
+        System.out.println("Geslacht: " + gender);
+        System.out.println("Gesteriliseerd: " + sterilised);
+        System.out.println("Gevaccineerd: " + vaccinated);
+        System.out.println("Binnengebracht: " + broughtIn);
         System.out.println("_____________________________________________");
     }
 }    
