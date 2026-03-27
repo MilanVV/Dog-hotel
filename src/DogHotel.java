@@ -7,7 +7,9 @@ public class DogHotel {
         Dog dog2 = null;
         Dog dog3 = null;
 
-        while(true){
+        boolean run = true;
+
+        while(run){
             System.out.println("Wat wil je doen?"); // Keuze 1
             System.out.println("(1) Een hond toevoegen");
             System.out.println("(2) Een hond verwijderen");
@@ -125,8 +127,8 @@ public class DogHotel {
                         "  }        /~~\n" +
                         " /_)^ --,r'\n" +
                         "|b      |b\n");
+                run = false;
                 scanner.close();
-                break;
             }
         }
     }
